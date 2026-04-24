@@ -37,8 +37,6 @@ if (password_verify($password, $user["password"])){
     <div class="container">
 <form method="POST">
     <h2>Log in - PUROVUE Essentials</h2>
-    <label for="name">Username: </label>
-    <input type="text" id="name" name="username" placeholder="Hope" required><br>
     <label for="email">Email: </label>
     <input type="email" id="email" name="email" placeholder="hope@gmail.com" required><br>
     <label for="pass">Password: </label>

@@ -10,31 +10,31 @@
 }
 
 /* ─── BODY ───────────────────────────────────────────────── */
+/* ─── BODY ───────────────────────────────────────────────── */
 body {
     min-height: 100vh;
-    background-color: #141c14;
+    background-color: #e8d5bc;
     background-image:
-        radial-gradient(ellipse 65% 50% at 8% 15%, rgba(160,90,30,0.22) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 45% at 92% 88%, rgba(30,110,70,0.20) 0%, transparent 55%),
-        radial-gradient(ellipse 35% 30% at 55% 45%, rgba(180,140,50,0.07) 0%, transparent 50%);
-    color: #e8e0d0;
+        radial-gradient(ellipse 65% 50% at 8% 15%, rgba(230,150,60,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 45% at 92% 88%, rgba(60,150,100,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 35% 30% at 55% 45%, rgba(210,170,80,0.10) 0%, transparent 50%);
+    color: #2a2018;
     padding: 50px 20px;
 }
-
 /* ─── CONTAINER ──────────────────────────────────────────── */
 .container {
     max-width: 700px;
     margin: auto;
-    background: rgba(240, 230, 210, 0.045);
-    border: 1px solid rgba(220, 190, 120, 0.11);
+    background: rgba(18, 12, 6, 0.92);
+    border: 1px solid rgba(180, 130, 50, 0.16);
     padding: 48px 50px;
     border-radius: 20px;
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
     box-shadow:
-        0 0 0 1px rgba(180,130,50,0.07),
-        0 40px 90px rgba(0,0,0,0.60),
-        0 2px 0 rgba(240,210,140,0.05) inset;
+        0 0 0 1px rgba(140,90,20,0.10),
+        0 30px 70px rgba(0,0,0,0.35),
+        0 2px 0 rgba(200,160,80,0.06) inset;
     animation: fadeUp 0.65s cubic-bezier(.22,1,.36,1) both;
 }
 
@@ -52,15 +52,15 @@ h2, h3 {
 
 h2 {
     font-size: 2rem;
-    color: #f0d99a;
-    border-bottom: 1px solid rgba(220,190,100,0.13);
+    color: #f0c97a;
+    border-bottom: 1px solid rgba(220,180,80,0.15);
     padding-bottom: 14px;
     margin-bottom: 28px;
 }
 
 h3 {
     font-size: 1.25rem;
-    color: #b89a58;
+    color: #c8a050;
     margin-bottom: 18px;
 }
 
@@ -76,32 +76,40 @@ form {
 /* ─── INPUTS ─────────────────────────────────────────────── */
 input {
     padding: 13px 18px;
-    background: rgba(240, 230, 200, 0.055);
-    border: 1px solid rgba(220, 190, 110, 0.14);
+    background: rgba(255, 245, 225, 0.07);
+    border: 1px solid rgba(220, 180, 90, 0.18);
     border-radius: 10px;
     font-size: 14px;
-    color: #e8e0d0;
+    color: #ede0c8;
     font-weight: 300;
     letter-spacing: 0.2px;
     transition: all 0.25s ease;
     outline: none;
 }
+/* ─── LABEL ──────────────────────────────────────────────── */
+label {
+    color: #f0c97a;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin-bottom: 2px;
+}
 
 input::placeholder {
-    color: rgba(220, 200, 155, 0.28);
+    color: rgba(210, 185, 140, 0.30);
 }
 
 input:focus {
-    border-color: rgba(200, 140, 55, 0.52);
-    background: rgba(240, 230, 200, 0.09);
-    box-shadow: 0 0 0 3px rgba(190,125,45,0.11);
+    border-color: rgba(230, 130, 20, 0.55);
+    background: rgba(255, 245, 225, 0.11);
+    box-shadow: 0 0 0 3px rgba(220,120,20,0.10);
 }
 
 /* ─── BUTTON ─────────────────────────────────────────────── */
 button {
     padding: 13px 22px;
-    background: linear-gradient(135deg, #a85c28 0%, #2e7a50 100%);
-    color: #fdf6e8;
+    background: #e8780a;
+    color: #fff8f0;
     border: none;
     border-radius: 10px;
     font-size: 14px;
@@ -109,22 +117,20 @@ button {
     font-weight: 500;
     letter-spacing: 0.5px;
     cursor: pointer;
-    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(160,90,35,0.28);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(230,115,10,0.32);
 }
 
 button:hover {
-    opacity: 0.84;
+    background: #cf6708;
     transform: translateY(-2px);
-    box-shadow: 0 8px 26px rgba(160,90,35,0.36);
+    box-shadow: 0 8px 26px rgba(230,115,10,0.42);
 }
 
 button:active {
     transform: translateY(0);
-    opacity: 1;
+    background: #b85c06;
 }
-
-/* ─── TABLE ──────────────────────────────────────────────── */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -133,49 +139,47 @@ table {
 }
 
 th {
-    background: rgba(170,120,35,0.11);
-    color: #c0983c;
+    background: rgba(200,140,30,0.12);
+    color: #f0c97a;
     font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     font-size: 11.5px;
     padding: 13px 16px;
-    border-bottom: 1px solid rgba(220,185,100,0.10);
+    border-bottom: 1px solid rgba(200,160,60,0.12);
     text-align: left;
 }
 
 td {
     padding: 13px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: #ccc4b0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #e8dcc8;
     vertical-align: middle;
 }
 
 tr:hover td {
-    background: rgba(220,190,100,0.03);
+    background: rgba(220,170,60,0.04);
 }
-
-/* ─── ALL LINKS ──────────────────────────────────────────── */
 a {
     text-decoration: none;
-    color: #b89a58;
+    color: #c89040;
     font-size: 14px;
     font-weight: 400;
     transition: color 0.2s;
 }
 
 a:hover {
-    color: #e8c46a;
+    color: #e8a020;
     text-decoration: none;
 }
 
-/* ─── EDIT LINK (style any <a> with edit in href) ────────── */
+/* ─── EDIT LINK ──────────────────────────────────────────── */
 a[href*="edit"] {
     display: inline-block;
     padding: 5px 13px;
-    background: rgba(50, 120, 200, 0.12);
-    color: #7ab8f5;
-    border: 1px solid rgba(70,140,220,0.20);
+    background: rgba(50, 120, 210, 0.12);
+    color: #6aaaf0;
+    border: 1px solid rgba(50,120,210,0.22);
     border-radius: 7px;
     font-size: 12.5px;
     font-weight: 500;
@@ -184,18 +188,18 @@ a[href*="edit"] {
 }
 
 a[href*="edit"]:hover {
-    background: rgba(50,120,200,0.24);
-    color: #aad4ff;
+    background: rgba(50,120,210,0.22);
+    color: #a0ccff;
     transform: translateY(-1px);
 }
 
-/* ─── DELETE LINK (style any <a> with delete in href) ────── */
+/* ─── DELETE LINK ────────────────────────────────────────── */
 a[href*="delete"] {
     display: inline-block;
     padding: 5px 13px;
-    background: rgba(190, 45, 45, 0.12);
-    color: #f07878;
-    border: 1px solid rgba(200,55,55,0.20);
+    background: rgba(200, 55, 55, 0.12);
+    color: #f07070;
+    border: 1px solid rgba(200,55,55,0.22);
     border-radius: 7px;
     font-size: 12.5px;
     font-weight: 500;
@@ -203,27 +207,27 @@ a[href*="delete"] {
 }
 
 a[href*="delete"]:hover {
-    background: rgba(190,45,45,0.26);
+    background: rgba(200,55,55,0.22);
     color: #ffaaaa;
     transform: translateY(-1px);
 }
 
-/* ─── LOGOUT (style any <a> with logout in href) ─────────── */
+/* ─── LOGOUT ─────────────────────────────────────────────── */
 a[href*="logout"] {
     display: inline-flex;
     align-items: center;
     gap: 7px;
     float: right;
-    background: rgba(160, 40, 40, 0.12);
-    color: #e88080;
-    border: 1px solid rgba(190,55,55,0.20);
+    background: rgba(200, 60, 60, 0.12);
+    color: #f07070;
+    border: 1px solid rgba(200,60,60,0.22);
     padding: 9px 18px;
     border-radius: 9px;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 2px 10px rgba(170,35,35,0.10);
+    box-shadow: 0 2px 10px rgba(180,40,40,0.10);
 }
 
 a[href*="logout"]::before {
@@ -233,11 +237,11 @@ a[href*="logout"]::before {
 }
 
 a[href*="logout"]:hover {
-    background: rgba(175,40,40,0.24);
+    background: rgba(200,60,60,0.22);
     color: #ffb0b0;
-    border-color: rgba(210,65,65,0.32);
+    border-color: rgba(210,65,65,0.35);
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(170,35,35,0.18);
+    box-shadow: 0 4px 16px rgba(180,40,40,0.16);
 }
 
 a[href*="logout"]:hover::before {
@@ -262,7 +266,7 @@ a[href*="logout"]:hover::before {
 
     tr {
         margin-bottom: 14px;
-        border: 1px solid rgba(220,185,100,0.09);
+        border: 1px solid rgba(200,150,60,0.12);
         border-radius: 12px;
         padding: 10px 14px;
     }
@@ -279,7 +283,7 @@ a[href*="logout"]:hover::before {
         left: 14px;
         top: 13px;
         font-weight: 500;
-        color: #b89a58;
+        color: #c8a050;
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
