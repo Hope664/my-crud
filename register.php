@@ -7,8 +7,8 @@ $password =password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO users (username,email,password) VALUES('$username','$email','$password')";
 if($conn->query($sql)){
-echo "Account created successfully!";
 header("Location:dashboard.php");
+exit();
 }
 else{
     echo "Error:" . $conn->error;
