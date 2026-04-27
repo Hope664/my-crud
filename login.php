@@ -51,6 +51,8 @@ if (password_verify($password, $user["password"])){
     <label for="pass">Password: </label>
     <input type="password"id="pass" name="password" placeholder="password" required><br>
     <button type="submit">Login</button>
+    <p>don't have an account?</p>
+    <button type="submit">sign up</button>
 </form>
     </div>
 </body>
