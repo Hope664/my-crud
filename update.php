@@ -1,46 +1,79 @@
 <?php
 include "config.php";
+session_start();
 
-$id = $_GET["id"];
+// Only admin can edit from this page
+if (!isset($_SESSION["user_id"])) {
+    header("location: login.php");
+    exit();
+}
 
-$result = $conn->query("SELECT * FROM clients WHERE id=$id");
-$row = $result->fetch_assoc();
+if (!isset($_GET["id"])) {
+    header("Location: dashboard.php");
+    exit();
+}
 
+$id   = intval($_GET["id"]);
+$stmt = $conn->prepare("SELECT * FROM clients WHERE id=?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$row = $stmt->get_result()->fetch_assoc();
+
+if (!$row) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
+    $username = trim($_POST["username"]); // was wrongly 'name' before
+    $email    = trim($_POST["email"]);
+    $phone    = trim($_POST["phone"]);
 
-    $sql = "UPDATE clients 
-            SET name='$name', email='$email', phone='$phone'
-            WHERE id=$id";
+    $stmt = $conn->prepare(
+        "UPDATE clients SET username=?, email=?, phone=? WHERE id=?"
+    );
+    $stmt->bind_param("sssi", $username, $email, $phone, $id);
 
-    if ($conn->query($sql)) {
+    if ($stmt->execute()) {
         header("Location: dashboard.php");
+        exit();
     } else {
         echo "Error updating: " . $conn->error;
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUROVUE</title>
+    <title>Edit Client – PUROVUE</title>
     <link rel="stylesheet" href="server.css">
 </head>
 <body>
-    <div class="container">
-<h2>Edit Client</h2>
+<div class="container">
+    <h2>Edit Client</h2>
 
-<form method="POST">
-    <input type="text" name="name" value="<?php echo $row['name']; ?>" required>
-    <input type="email" name="email" value="<?php echo $row['email']; ?>" required>
-    <input type="text" name="phone" value="<?php echo $row['phone']; ?>" required>
-    <button type="submit">Update</button>
-</form>
-    </div>
+    <form method="POST">
+        <label>Username</label>
+        <input type="text" name="username"
+               value="<?php echo htmlspecialchars($row['username']); ?>" required>
+
+        <label>Email</label>
+        <input type="email" name="email"
+               value="<?php echo htmlspecialchars($row['email']); ?>" required>
+
+        <label>Phone</label>
+        <input type="text" name="phone"
+               value="<?php echo htmlspecialchars($row['phone']); ?>" required>
+
+        <button type="submit">Update Client</button>
+    </form>
+
+    <p style="margin-top:14px;">
+        <a href="dashboard.php">← Back to Dashboard</a>
+    </p>
+</div>
 </body>
 </html>

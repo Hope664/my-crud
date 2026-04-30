@@ -1,5 +1,14 @@
 <?php
 include "config.php";
+session_start();
+
+if (isset($_SESSION["client_id"])){
+    header("location:client_dashboard");
+    exit();
+}
+$error = "";
+$success  = "";
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 $username = $_POST["username"];
 $email = $_POST["email"];

@@ -1,13 +1,24 @@
 <?php
 include "config.php";
+session_start();
 
-$id = $_GET["id"];
+// Only admin can delete
+if (!isset($_SESSION["user_id"])) {
+    header("location: login.php");
+    exit();
+}
 
-$sql = "DELETE FROM clients WHERE id=$id";
+if (isset($_GET["id"])) {
+    $id   = intval($_GET["id"]); // Safely cast to integer
+    $stmt = $conn->prepare("DELETE FROM clients WHERE id=?");
+    $stmt->bind_param("i", $id);
 
-if ($conn->query($sql)) {
-    header("Location: dashboard.php");
+    if ($stmt->execute()) {
+        header("Location: dashboard.php");
+    } else {
+        echo "Error deleting: " . $conn->error;
+    }
 } else {
-    echo "Error deleting: " . $conn->error;
+    header("Location: dashboard.php");
 }
 ?>
