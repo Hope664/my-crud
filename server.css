@@ -1,70 +1,51 @@
-/* ─── GOOGLE FONTS ─────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500&display=swap');
 
-/* ─── RESET ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* ─── BODY ───────────────────────────────────────────────── */
-/* ─── BODY ───────────────────────────────────────────────── */
 body {
     min-height: 100vh;
-    background-color: #e8d5bc;
-    background-image:
-        radial-gradient(ellipse 65% 50% at 8% 15%, rgba(230,150,60,0.22) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 45% at 92% 88%, rgba(60,150,100,0.14) 0%, transparent 55%),
-        radial-gradient(ellipse 35% 30% at 55% 45%, rgba(210,170,80,0.10) 0%, transparent 50%);
-    color: #2a2018;
+    background: #000;
+    color: #fff;
     padding: 50px 20px;
 }
-/* ─── CONTAINER ──────────────────────────────────────────── */
+
+
 .container {
     max-width: 700px;
     margin: auto;
-    background: rgba(18, 12, 6, 0.92);
-    border: 1px solid rgba(180, 130, 50, 0.16);
-    padding: 48px 50px;
-    border-radius: 20px;
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-    box-shadow:
-        0 0 0 1px rgba(140,90,20,0.10),
-        0 30px 70px rgba(0,0,0,0.35),
-        0 2px 0 rgba(200,160,80,0.06) inset;
-    animation: fadeUp 0.65s cubic-bezier(.22,1,.36,1) both;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-}
 
-/* ─── HEADINGS ───────────────────────────────────────────── */
 h2, h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #f0c97a;
-    border-bottom: 1px solid rgba(220,180,80,0.15);
-    padding-bottom: 14px;
-    margin-bottom: 28px;
+    font-size: 1.8rem;
+    color: #111;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 1.25rem;
-    color: #c8a050;
-    margin-bottom: 18px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-/* ─── FORM ───────────────────────────────────────────────── */
+
 form {
     display: flex;
     flex-direction: column;
@@ -73,64 +54,56 @@ form {
     max-width: 370px;
 }
 
-/* ─── INPUTS ─────────────────────────────────────────────── */
-input {
-    padding: 13px 18px;
-    background: rgba(255, 245, 225, 0.07);
-    border: 1px solid rgba(220, 180, 90, 0.18);
-    border-radius: 10px;
-    font-size: 14px;
-    color: #ede0c8;
-    font-weight: 300;
-    letter-spacing: 0.2px;
-    transition: all 0.25s ease;
-    outline: none;
-}
-/* ─── LABEL ──────────────────────────────────────────────── */
+
 label {
-    color: #f0c97a;
+    color: #333;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.4px;
-    margin-bottom: 2px;
+}
+
+
+input {
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111;
+    outline: none;
+    transition: 0.2s;
 }
 
 input::placeholder {
-    color: rgba(210, 185, 140, 0.30);
+    color: #999;
 }
 
 input:focus {
-    border-color: rgba(230, 130, 20, 0.55);
-    background: rgba(255, 245, 225, 0.11);
-    box-shadow: 0 0 0 3px rgba(220,120,20,0.10);
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
 }
 
-/* ─── BUTTON ─────────────────────────────────────────────── */
+
 button {
-    padding: 13px 22px;
-    background: #e8780a;
-    color: #fff8f0;
+    padding: 12px 20px;
+    background: #000;
+    color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 14px;
-    font-family: 'Outfit', sans-serif;
     font-weight: 500;
-    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(230,115,10,0.32);
+    transition: 0.2s;
 }
 
 button:hover {
-    background: #cf6708;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 26px rgba(230,115,10,0.42);
+    background: #333;
 }
 
 button:active {
-    transform: translateY(0);
-    background: #b85c06;
+    transform: scale(0.98);
 }
+
+/* ─── TABLE ────────────────────────────────────────────── */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -139,119 +112,85 @@ table {
 }
 
 th {
-    background: rgba(200,140,30,0.12);
-    color: #f0c97a;
-    font-weight: 500;
-    letter-spacing: 0.8px;
+    background: #f0f0f0;
+    color: #111;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 11.5px;
-    padding: 13px 16px;
-    border-bottom: 1px solid rgba(200,160,60,0.12);
+    font-size: 11px;
+    padding: 12px 14px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 td {
-    padding: 13px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    color: #e8dcc8;
-    vertical-align: middle;
+    padding: 12px 14px;
+    border-bottom: 1px solid #eee;
+    color: #333;
 }
 
 tr:hover td {
-    background: rgba(220,170,60,0.04);
+    background: #fafafa;
 }
+
+/* ─── LINKS ────────────────────────────────────────────── */
 a {
     text-decoration: none;
-    color: #c89040;
+    color: #000;
     font-size: 14px;
-    font-weight: 400;
-    transition: color 0.2s;
 }
 
 a:hover {
-    color: #e8a020;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-/* ─── EDIT LINK ──────────────────────────────────────────── */
+/* ─── EDIT BUTTON ─────────────────────────────────────── */
 a[href*="edit"] {
     display: inline-block;
-    padding: 5px 13px;
-    background: rgba(50, 120, 210, 0.12);
-    color: #6aaaf0;
-    border: 1px solid rgba(50,120,210,0.22);
-    border-radius: 7px;
-    font-size: 12.5px;
-    font-weight: 500;
-    margin-right: 6px;
-    transition: background 0.2s, color 0.2s, transform 0.15s;
+    padding: 5px 10px;
+    background: #eee;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-right: 5px;
 }
 
 a[href*="edit"]:hover {
-    background: rgba(50,120,210,0.22);
-    color: #a0ccff;
-    transform: translateY(-1px);
+    background: #ddd;
 }
 
-/* ─── DELETE LINK ────────────────────────────────────────── */
+/* ─── DELETE BUTTON ───────────────────────────────────── */
 a[href*="delete"] {
     display: inline-block;
-    padding: 5px 13px;
-    background: rgba(200, 55, 55, 0.12);
-    color: #f07070;
-    border: 1px solid rgba(200,55,55,0.22);
-    border-radius: 7px;
-    font-size: 12.5px;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s, transform 0.15s;
+    padding: 5px 10px;
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
 }
 
 a[href*="delete"]:hover {
-    background: rgba(200,55,55,0.22);
-    color: #ffaaaa;
-    transform: translateY(-1px);
+    background: #333;
 }
 
-/* ─── LOGOUT ─────────────────────────────────────────────── */
+/* ─── LOGOUT BUTTON ───────────────────────────────────── */
 a[href*="logout"] {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
     float: right;
-    background: rgba(200, 60, 60, 0.12);
-    color: #f07070;
-    border: 1px solid rgba(200,60,60,0.22);
-    padding: 9px 18px;
-    border-radius: 9px;
+    padding: 8px 15px;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
     font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 2px 10px rgba(180,40,40,0.10);
-}
-
-a[href*="logout"]::before {
-    content: "→";
-    font-size: 15px;
-    transition: transform 0.2s;
 }
 
 a[href*="logout"]:hover {
-    background: rgba(200,60,60,0.22);
-    color: #ffb0b0;
-    border-color: rgba(210,65,65,0.35);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(180,40,40,0.16);
+    background: #333;
 }
 
-a[href*="logout"]:hover::before {
-    transform: translateX(3px);
-}
-
-/* ─── RESPONSIVE ─────────────────────────────────────────── */
+/* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 600px) {
     .container {
-        padding: 28px 18px;
+        padding: 25px;
     }
 
     form {
@@ -262,13 +201,15 @@ a[href*="logout"]:hover::before {
         display: block;
     }
 
-    th { display: none; }
+    th {
+        display: none;
+    }
 
     tr {
-        margin-bottom: 14px;
-        border: 1px solid rgba(200,150,60,0.12);
-        border-radius: 12px;
-        padding: 10px 14px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     td {
@@ -280,12 +221,11 @@ a[href*="logout"]:hover::before {
 
     td::before {
         position: absolute;
-        left: 14px;
-        top: 13px;
+        left: 10px;
+        top: 12px;
         font-weight: 500;
-        color: #c8a050;
+        color: #666;
         font-size: 11px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 }

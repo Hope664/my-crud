@@ -40,12 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Login – PUROVUE</title>
+    <title>Client Login</title>
     <link rel="stylesheet" href="server.css">
 </head>
 <body>
 <div class="container">
-    <h2>Client Login – PUROVUE Essentials</h2>
+    <h2>Client Login</h2>
 
     <?php if ($error): ?>
         <p style="color:#f07070;"><?php echo $error; ?></p>

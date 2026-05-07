@@ -42,7 +42,7 @@ $result = $conn->query("SELECT * FROM clients");
 </head>
 <body>
     <div class="container">
-        <h2>PUROVUE Essentials dashboard</h2>
+        <h2>Admin Dashboard</h2>
 
 <a href="logout.php">Logout</a>
 
@@ -70,7 +70,7 @@ $result = $conn->query("SELECT * FROM clients");
     <td><?php echo $row["email"]; ?></td>
     <td><?php echo $row["phone"]; ?></td>
     <td>
-    <a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
+    <a href="delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this this client? This cannot be undone.')">Delete</a>
 </td>
 <td>
     <a href="update.php?id=<?php echo $row['id']; ?>">Edit</a>

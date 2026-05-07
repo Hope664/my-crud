@@ -35,7 +35,7 @@ else{
 <body>
     <div class="container">
         <form method="POST">
-    <h2>Register - PUROVUE Essentials</h2>
+    <h2>Register</h2>
     <label for="name">Username: </label>
     <input type="text" id="name" name="username" placeholder="Hope" required><br>
     <label for="email">Email: </label>

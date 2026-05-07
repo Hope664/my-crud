@@ -56,12 +56,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register – PUROVUE</title>
+    <title>Register</title>
     <link rel="stylesheet" href="server.css">
 </head>
 <body>
 <div class="container">
-    <h2>Register – PUROVUE Essentials</h2>
+    <h2>Register</h2>
 
     <?php if ($error): ?>
         <p style="color:#f07070;"><?php echo htmlspecialchars($error); ?></p>

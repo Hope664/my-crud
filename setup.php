@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-// Create clients table if it doesn't exist
+
 $sql = "CREATE TABLE IF NOT EXISTS clients (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,

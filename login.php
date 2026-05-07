@@ -37,7 +37,7 @@ if (password_verify($password, $user["password"])){
 <body>
     <div class="container">
 <form method="POST">
-    <h2>Log in - PUROVUE Essentials</h2>
+    <h2>Log in </h2>
     <?php 
     if(!empty($error)):
     ?>
