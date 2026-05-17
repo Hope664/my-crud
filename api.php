@@ -14,8 +14,19 @@ exit('connection failed: '. $conn->connect_error);
 }
 echo('connected successfully');
 
-$method = $_SERVER['REQEST_METHOD'];
+$method = $_SERVER['REQUEST_METHOD'];
 if($method=='POST'){
+    $username = "Happy";
+    $email = "happy@gmail.com";
+    $password = "12dhiegtudyjhiedjlk";
 
+$sql = "INSERT INTO users (username,email,password)VALUES ('$username','$email',$password')";
+$result = $conn->query($sql);
+
+if($result){
+    echo "successfully inserted";
+}else{
+    echo "Error:".$conn->error;
+}
 }
 ?>
